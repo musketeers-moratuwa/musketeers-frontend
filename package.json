@@ -1,0 +1,20 @@
+{
+  "name": "musketeers-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musketeers-moratuwa/musketeers-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/musketeers-moratuwa/musketeers-frontend/issues"
+  },
+  "homepage": "https://github.com/musketeers-moratuwa/musketeers-frontend#readme"
+}

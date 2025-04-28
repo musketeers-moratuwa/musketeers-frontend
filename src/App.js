@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Search, Menu, X, User, LogOut, ArrowLeft, Plus, Minus, Trash2 } from 'lucide-react'; // Added icons
+import { loginUser, fetchCart, updateCart } from './services/api';
 
 // Mock data for jewelry products
 const mockProducts = [
@@ -442,6 +443,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cart, setCart] = useState([]); // Cart state
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [user, setUser] = useState(null);
 
   // --- Cart Management Functions ---
   const addToCart = (productToAdd) => {
@@ -493,9 +496,43 @@ function App() {
   };
 
   // --- Auth ---
+  const handleLogin = async (username, password) => {
+    try {
+        const response = await loginUser(username, password);
+        setToken(response.token);
+        setUser(response.user);
+        localStorage.setItem('token', response.token);
+        handleNavigate('home');
+    } catch (error) {
+        console.error('Login failed:', error);
+    }
+  };
+
   const handleLoginSuccess = () => { setIsLoggedIn(true); handleNavigate('home'); };
-  const handleLogout = () => { setIsLoggedIn(false); handleNavigate('home'); };
+  const handleLogout = () => {
+    setToken(null);
+    setUser(null);
+    localStorage.removeItem('token');
+    setCart([]);
+    handleNavigate('home');
+  };
   const toggleMobileMenu = () => { setIsMobileMenuOpen(!isMobileMenuOpen); };
+
+  // Update cart in backend whenever it changes
+  useEffect(() => {
+    if (token && cart.length > 0) {
+        updateCart(cart, token).catch(console.error);
+    }
+  }, [cart, token]);
+
+  // Fetch cart from backend on login
+  useEffect(() => {
+    if (token) {
+        fetchCart(token)
+            .then(cartData => setCart(cartData.items))
+            .catch(console.error);
+    }
+  }, [token]);
 
   // --- Render Content ---
   const renderPage = () => {

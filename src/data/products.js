@@ -1,0 +1,8 @@
+export const mockProducts = [
+  { id: 1, name: 'Diamond Solitaire Ring', description: 'An elegant and timeless 1 carat diamond solitaire ring set in lustrous 18k white gold. Perfect for engagements or special occasions.', price: 2500, imageUrl: 'https://placehold.co/600x600/FFF0F5/A0522D?text=Diamond+Ring', category: 'rings' },
+  { id: 2, name: 'Gold Hoop Earrings', description: 'Classic and versatile 14k yellow gold hoop earrings. Lightweight and comfortable for everyday wear, adding a touch of sophistication.', price: 350, imageUrl: 'https://placehold.co/600x600/FFF8DC/B8860B?text=Gold+Hoops', category: 'earrings' },
+  { id: 3, name: 'Sapphire Pendant Necklace', description: 'A stunning oval-cut blue sapphire pendant suspended from a delicate sterling silver chain. A beautiful gift idea.', price: 800, imageUrl: 'https://placehold.co/600x600/E0FFFF/4682B4?text=Sapphire+Necklace', category: 'necklaces' },
+  { id: 4, name: 'Pearl Bracelet', description: 'Timeless elegance embodied in this freshwater pearl bracelet. Features lustrous pearls secured with a sterling silver clasp.', price: 450, imageUrl: 'https://placehold.co/600x600/FAF0E6/8B4513?text=Pearl+Bracelet', category: 'bracelets' },
+  { id: 5, name: 'Emerald Cut Earrings', description: 'Exquisite emerald-cut green gemstone earrings set in polished platinum. A statement piece for formal events.', price: 3200, imageUrl: 'https://placehold.co/600x600/F0FFF0/2E8B57?text=Emerald+Earrings', category: 'earrings' },
+  { id: 6, name: 'Men\'s Gold Chain', description: 'A solid and stylish 14k yellow gold curb link chain necklace, 22 inches in length. A classic accessory for men.', price: 1200, imageUrl: 'https://placehold.co/600x600/FFFACD/DAA520?text=Gold+Chain', category: 'necklaces' },
+];

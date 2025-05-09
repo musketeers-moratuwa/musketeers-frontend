@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+**Important:** Ensure the [backend server is running](#) before starting the frontend application. By default, the frontend will try to connect to the backend at `http://localhost:8081/api`.
+
 In the project directory, you can run:
 
 ### `npm start`
